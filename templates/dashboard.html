@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BEACON Dashboard</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+</head>
+<body data-role="{{ role }}">
+  <nav class="navbar">
+    <div class="logo-group">
+      <img src="/static/img/logo.png" alt="Logo" class="logo-img" />
+      <span class="logo-text">BEACON</span>
+    </div>
+    <div class="nav-links">
+      {% if role == 'client' %}
+        <a href="#">Resources</a>
+        <a href="#">Request help</a>
+        <a href="#">Map</a>
+      {% endif %}
+      <a href="/logout" class="btn primary">Logout</a>
+    </div>
+  </nav>
+
+  <main class="dashboard-container">
+    <section class="card">
+      <h2 class="card-title">Available Resources</h2>
+      <div id="resources" class="resource-list"></div>
+    </section>
+
+    <section class="card chat">
+      <h2 class="card-title">General Assistance Chat</h2>
+      <div id="messages" class="chat-box"></div>
+      <p class="privacy">⚠️ For your safety, avoid sharing personal details. Messages are encrypted but not 100% secure.</p>
+      <div class="msg-input">
+        <input id="msgInput" placeholder="Type your message..." />
+        <button onclick="sendMessage()" class="btn secondary">Send</button>
+      </div>
+    </section>
+
+    <section class="card map-section">
+      <h2 class="card-title">Location Sharing</h2>
+      <div id="map" style="height: 300px;"></div>
+      <div id="pin-coords" class="pin-meta"></div>
+      {% if role == 'staff' %}
+        <div id="client-checkin" class="client-checkin-msg"></div>
+      {% endif %}
+      <button onclick="clearPin()" class="btn danger">Remove Pin</button>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

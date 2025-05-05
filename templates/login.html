@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BEACON Login</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-group">
+      <img src="/static/img/logo.png" alt="Logo" class="logo-img" />
+      <span class="logo-text">BEACON</span>
+    </div>
+    <div class="nav-links">
+      <a href="#">Resources</a>
+      <a href="#">Request help</a>
+      <a href="#">Map</a>
+      <a class="btn primary">Login</a>
+    </div>
+  </nav>
+
+  <div class="login-container">
+    <form method="POST" action="/login" class="login-box">
+      <input type="password" name="access_code" placeholder="Enter Access Code" required />
+      <button type="submit" class="btn primary">Login</button>
+    </form>
+  </div>
+</body>
+</html>

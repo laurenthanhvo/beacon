@@ -1,0 +1,336 @@
+/* General Reset & Layout */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #093a70;
+  font-weight: 600;
+}
+
+/* Navigation Bar */
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+  padding: 12px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-text {
+  font-size: 1.8em;
+  font-weight: 800;
+  color: #E85812;
+}
+
+.logo-img {
+  height: 32px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.card-title {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #164D84;
+  margin-bottom: 10px;
+}
+
+/* Resource Cards */
+.resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.resource-list .resource-card {
+  background: #F5F7FB;
+  padding: 15px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.resource-list .resource-card:hover {
+  background: #edf2fa;
+}
+
+.resource-card a {
+  font-weight: bold;
+  color: #164D84;
+  font-size: 1em;
+}
+
+/* Chat Section */
+.chat-box {
+  background: #F9FAFB;
+  border-radius: 10px;
+  padding: 15px;
+  height: 180px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+}
+
+/* Chat Bubbles (Flex Alignment) */
+.message-wrapper {
+  display: flex;
+  margin: 10px 0;
+}
+
+.message-wrapper.left {
+  justify-content: flex-start;
+}
+
+.message-wrapper.right {
+  justify-content: flex-end;
+}
+
+.message-card {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 16px;
+  max-width: 75%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  font-size: 0.95em;
+  color: #111;
+}
+
+.msg-label {
+  font-size: 0.7em;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.msg-sender {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.msg-text {
+  margin-bottom: 10px;
+  line-height: 1.4em;
+}
+
+.msg-time {
+  font-size: 0.75em;
+  color: #888;
+  text-align: right;
+}
+
+.msg-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 0;
+  color: #fff;
+  transition: opacity 0.2s ease;
+}
+
+.delete-btn:hover {
+  opacity: 0.7;
+}
+
+.message-wrapper.left .delete-btn {
+  color: #666;
+}
+
+/* Role-based Chat Colors */
+.message-bubble {
+  max-width: 65%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  margin: 8px;
+  font-size: 0.95em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  word-wrap: break-word;
+  display: inline-block;
+  position: relative;
+  clear: both;
+}
+
+.message-bubble.left {
+  float: left;
+  border-top-left-radius: 0;
+}
+
+.message-bubble.right {
+  float: right;
+  border-top-right-radius: 0;
+}
+
+.message-bubble.client.right {
+  background-color: #E85812;
+  color: white;
+}
+
+.message-bubble.staff.left {
+  background-color: #164D84;
+  color: white;
+}
+
+.message-bubble.client.left,
+.message-bubble.staff.right {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+/* Input & Buttons */
+.privacy {
+  font-size: 0.8em;
+  color: #333;
+  margin: 10px 0;
+}
+
+.msg-input {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  flex-grow: 1;
+}
+
+.btn {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn.primary {
+  background-color: #FFDD03;
+  color: #000;
+}
+
+.btn.secondary {
+  background-color: #164D84;
+  color: #fff;
+}
+
+.btn.danger {
+  background-color: #E85812;
+  color: #fff;
+}
+
+/* Login Page */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  background-color: #f5f5f5;
+}
+
+.login-box {
+  background: white;
+  padding: 60px 50px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 320px;
+  max-width: 400px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.login-box input {
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: 0.2s ease;
+}
+
+.login-box input:focus {
+  border-color: #E85812;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(232, 88, 18, 0.2);
+}
+
+.login-box .btn {
+  background-color: #FFDD03;
+  color: #000;
+  font-weight: 700;
+  padding: 12px 0;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: background 0.3s ease;
+}
+
+.login-box .btn:hover {
+  background-color: #f2ca00;
+}
+
+/* Check-in Display (Staff) */
+.client-checkin-msg {
+  margin-top: 10px;
+  background: #F5F7FB;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.checkin-entry {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+  color: #164D84;
+}
+
+.checkin-time {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.checkin-desc {
+  font-size: 0.85em;
+  color: #333;
+}
